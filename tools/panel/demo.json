@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "demo": true,
+  "host": "pve-homelab",
+  "host_state": "ok",
+  "cpu_pct": 23,
+  "ram_used_bytes": 13314398618,
+  "ram_total_bytes": 34359738368,
+  "disk_used_bytes": 199715979264,
+  "disk_total_bytes": 549755813888,
+  "machines": [
+    {
+      "id": 100,
+      "kind": "VM",
+      "name": "Home Assistant",
+      "state": "running"
+    },
+    {
+      "id": 101,
+      "kind": "CT",
+      "name": "DNS local",
+      "state": "running"
+    },
+    {
+      "id": 102,
+      "kind": "VM",
+      "name": "Servidor de archivos",
+      "state": "running"
+    },
+    {
+      "id": 103,
+      "kind": "VM",
+      "name": "Laboratorio",
+      "state": "stopped"
+    },
+    {
+      "id": 104,
+      "kind": "CT",
+      "name": "Copias de seguridad",
+      "state": "unknown"
+    }
+  ]
+}

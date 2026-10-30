@@ -1,0 +1,2 @@
+# Only ACM1 data; leave the root debug console ACM0 unchanged.
+SUBSYSTEM=="tty", ENV{ID_VENDOR_ID}=="1d6b", ENV{ID_MODEL_ID}=="0104", ENV{ID_SERIAL_SHORT}=="eutb710mdq-sd-poc", ENV{ID_USB_INTERFACE_NUM}=="02", GROUP="tablet-panel", MODE="0660"

@@ -1,0 +1,35 @@
+[Unit]
+Description=Read-only Proxmox metrics for USB tablet panel
+After=network.target pveproxy.service
+
+[Service]
+Type=simple
+User=tablet-panel
+Group=tablet-panel
+ExecStart=/usr/bin/python3 /opt/tablet-panel/collector.py
+LoadCredential=api.json:/etc/tablet-panel/api.json
+RuntimeDirectory=tablet-panel
+RuntimeDirectoryMode=0750
+UMask=0027
+Restart=always
+RestartSec=3
+TimeoutStopSec=15
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+RestrictSUIDSGID=yes
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+CapabilityBoundingSet=
+DevicePolicy=closed
+DeviceAllow=char-ttyACM rw
+MemoryMax=128M
+Nice=10
+LogRateLimitIntervalSec=30s
+LogRateLimitBurst=10
+
+[Install]
+WantedBy=multi-user.target
